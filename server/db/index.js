@@ -1,4 +1,4 @@
-var mysql = require('mysql2');
+const mysql = require('mysql2');
 
 // Create a database connection and export it from this file.
 // Confirm that the credentials supplied for the connection are correct.
@@ -10,7 +10,4 @@ exports.dbConnection = mysql.createConnection({
   user: 'root',
   password: '',
   database: 'chat',
-})
-
-
-
+});
