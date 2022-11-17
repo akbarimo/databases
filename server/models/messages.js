@@ -1,4 +1,4 @@
-var db = require('../db');
+const db = require('../db');
 
 module.exports = {
   getAll: function () {}, // a function which produces all the messages
