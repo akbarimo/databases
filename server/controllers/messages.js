@@ -1,6 +1,15 @@
-var models = require('../models');
+const {messages} = require('../models');
 
 module.exports = {
-  get: function (req, res) {}, // a function which handles a get request for all messages
-  post: function (req, res) {} // a function which handles posting a message to the database
+  get: (req, res) => {
+    res.statusCode = 200;
+    messages.getAll((result) => {
+      res.end(JSON.stringify(result));
+    });
+  },
+  post: (req, res) => {
+    res.statusCode = 201;
+    messages.create(req.body);
+    res.end();
+  }
 };
